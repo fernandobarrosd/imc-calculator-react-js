@@ -12,7 +12,7 @@ export const IMCCalculator = ({ onCalculate, children } : IMCCalculatorProps) =>
    const altura = useRef(0);
 
     const onClick = () => {
-        const imc = peso.current / (altura.current**2);
+        const imc = peso.current / (Math.pow(altura.current, 2));
         onCalculate(imc);
     }
     return (
