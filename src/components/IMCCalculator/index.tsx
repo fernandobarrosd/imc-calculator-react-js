@@ -12,8 +12,9 @@ export const IMCCalculator = ({ onCalculate, children } : IMCCalculatorProps) =>
    const altura = useRef(0);
 
     const onClick = () => {
-        const imc = peso.current / (Math.pow(altura.current, 2));
-        onCalculate(imc);
+        const imc = Number((peso.current / (Math.pow(altura.current, 2))))
+        .toFixed(2);
+        onCalculate(parseFloat(imc));
     }
     return (
         <Flex as="section"
